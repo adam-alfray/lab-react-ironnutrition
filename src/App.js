@@ -17,7 +17,6 @@ function App() {
   
   const addFood = (newFood) => {
     setFoodState(foods => [newFood, ...foods])
-  
   }
 
   return (

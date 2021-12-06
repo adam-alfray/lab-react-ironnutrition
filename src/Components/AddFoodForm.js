@@ -6,34 +6,34 @@ export default function AddFoodForm(props) {
     // console.log('props', props)
         
     // PROPS FOR ADDFOODFORM
-    const [nameState, setNameState] = useState('')
-    const [imageState, setImageState] = useState('')
-    const [caloriesState, setCaloriesState] = useState(0)
-    const [servingsState, setServingsState] = useState(0)
+    const [name, setName] = useState('')
+    const [image, setImage] = useState('')
+    const [calories, setCalories] = useState(0)
+    const [servings, setServings] = useState(0)
         
     // name change 
     const handleNameChange = event => {
-        setNameState(event.target.value)
+        setName(event.target.value)
     }
 
     // image change
     const handleImageChange = event => {
-        setImageState(event.target.value)
+        setImage(event.target.value)
     }
 
     // calories change
     const handleCaloriesChange = event => {
-        setCaloriesState(event.target.value)
+        setCalories(event.target.value)
     }
 
     // servings change
     const handleServingsChange = event => {
-        setServingsState(event.target.value)
+        setServings(event.target.value)
     }
 
         
     const handleSubmit = event => {
-        const newFood = { nameState, imageState, caloriesState, servingsState }
+        const newFood = { name, image, calories, servings }
             console.log('newfood', newFood)
         props.addFood(newFood)
 
@@ -45,16 +45,16 @@ export default function AddFoodForm(props) {
             <form onSubmit={handleSubmit} >
 
             <label htmlFor="nameState">Name:</label>
-            <Input value={nameState} type="text" onChange={handleNameChange} />
+            <Input value={name} type="text" onChange={handleNameChange} />
 
             <label htmlFor="imageState">Image URL:</label>
-            <Input value={imageState} type="text" onChange={handleImageChange} />
+            <Input value={image} type="image" onChange={handleImageChange} />
 
             <label htmlFor="caloriesState">Calories:</label>
-            <Input value={caloriesState} type="number" onChange={handleCaloriesChange} />
+            <Input value={calories} type="number" onChange={handleCaloriesChange} />
 
             <label htmlFor="servingsState">Servings:</label>
-            <Input value={servingsState} type="number" onChange={handleServingsChange} />
+            <Input value={servings} type="number" onChange={handleServingsChange} />
             
             <Button type='submit' onClick={handleSubmit}>Add Food</Button>
             </form>
